@@ -290,7 +290,6 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      cursor: pointer;
       /* Единый формат для всех карточек */
       aspect-ratio: 4 / 3;
       transition: aspect-ratio 0.3s ease, box-shadow 0.3s ease;
@@ -320,27 +319,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .certificate-card:hover .certificate-content {
-      opacity: 0;
-    }
-    .certificate-card:hover .certificate-image {
       opacity: 1;
-    }
-    .certificate-card:hover {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    }
-    /* На hover меняем пропорцию под размер документа */
-    .certificate-card.hover-A4 {
-      aspect-ratio: 210 / 297;
-    }
-    .certificate-card.hover_4_3 {
-      aspect-ratio: 4 / 3;
-    }
-    .certificate-card.hover_16_9 {
-      aspect-ratio: 16 / 9;
     }
     @media (max-width: 576px) {
       .certificate-card {
@@ -536,34 +515,18 @@
       <div class="certificates-grid fade-in">
         <!-- TESOL Certificate (4:3) -->
         <div class="certificate-card" data-format="4:3">
-          <div class="certificate-content">
-            <h3>🎓 TESOL Certificate</h3>
-            <p>Международная квалификация преподавателя английского языка</p>
-          </div>
           <div class="certificate-image" style="background-image: url('Papers/TESOL certificate.jpg');"></div>
         </div>
         <!-- Cambridge TKT (A4) -->
         <div class="certificate-card" data-format="A4">
-          <div class="certificate-content">
-            <h3>📜 Cambridge TKT</h3>
-            <p>Сертификат подтверждающий профессиональную квалификацию</p>
-          </div>
           <div class="certificate-image" style="background-image: url('Papers/TKT.jpg');"></div>
         </div>
         <!-- Foxford Course (4:3) -->
         <div class="certificate-card" data-format="4:3">
-          <div class="certificate-content">
-            <h3>🎯 Курс повышения квалификации "Фоксфорд"</h3>
-            <p>Углублённое обучение английскому языку при подготовке к ОГЭ и ЕГЭ</p>
-          </div>
           <div class="certificate-image" style="background-image: url('Papers/Foxford.png');"></div>
         </div>
         <!-- Master’s Degree (A4) -->
         <div class="certificate-card" data-format="A4">
-          <div class="certificate-content">
-            <h3>🏆 Cape Peninsula University of Technology</h3>
-            <p>Степень магистра в области педагогики</p>
-          </div>
           <div class="certificate-image" style="background-image: url('Papers/Master\'s\ degree.png');"></div>
         </div>
       </div>
@@ -676,26 +639,6 @@
       });
     });
 
-    // Hover-эффекты для сертификатов (смена пропорций)
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.certificate-card').forEach(card => {
-        const fmt = card.getAttribute('data-format');
-        let hoverClass = '';
-        if (fmt) {
-          if (fmt.toUpperCase() === 'A4') {
-            hoverClass = 'hover-A4';
-          } else {
-            hoverClass = 'hover_' + fmt.replace(':', '_');
-          }
-        }
-        card.addEventListener('mouseenter', () => {
-          if (hoverClass) card.classList.add(hoverClass);
-        });
-        card.addEventListener('mouseleave', () => {
-          if (hoverClass) card.classList.remove(hoverClass);
-        });
-      });
-    });
   </script>
 </body>
 </html>
