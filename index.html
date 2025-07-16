@@ -292,7 +292,7 @@
       overflow: hidden;
       /* Единый формат для всех карточек */
       aspect-ratio: 4 / 3;
-      transition: aspect-ratio 0.3s ease, box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease;
     }
     .certificate-content {
       position: absolute;
@@ -300,15 +300,13 @@
       width: 100%;
       height: 100%;
       padding: 1rem;
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: #fff;
       background: transparent;
-      opacity: 1;
-      transition: opacity 0.3s ease;
     }
     .certificate-image {
       position: absolute;
@@ -320,6 +318,9 @@
       background-repeat: no-repeat;
       background-position: center center;
       opacity: 1;
+    }
+    .certificate-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
     @media (max-width: 576px) {
       .certificate-card {
@@ -374,6 +375,129 @@
     }
     .contact-item:hover {
       transform: translateY(-3px);
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+    }
+    .modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.3s ease;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #666;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .modal-close:hover {
+      background: #f0f0f0;
+      color: #333;
+    }
+    .modal-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #2b6cb0;
+      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+    }
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(45deg, #2b6cb0, #1a365d);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(43, 108, 176, 0.3);
+    }
+    .form-submit:active {
+      transform: translateY(0);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
     /* Footer */
     .footer {
@@ -457,7 +581,7 @@
       <img class="hero-avatar" src="Pics/avatar.JPG" alt="Самвел Шишманян" />
       <h1>Самвел Шишманян</h1>
       <p class="hero-subtitle">Преподаватель английского языка<br />с 7-летним опытом</p>
-      <a href="#contact" class="cta-button">Записаться на урок</a>
+      <a href="#contact" class="cta-button" onclick="openModal()">Записаться на урок</a>
     </div>
   </section>
 
@@ -515,18 +639,34 @@
       <div class="certificates-grid fade-in">
         <!-- TESOL Certificate (4:3) -->
         <div class="certificate-card" data-format="4:3">
+          <div class="certificate-content">
+            <h3>🎓 TESOL Certificate</h3>
+            <p>Международная квалификация преподавателя английского языка</p>
+          </div>
           <div class="certificate-image" style="background-image: url('Papers/TESOL certificate.jpg');"></div>
         </div>
         <!-- Cambridge TKT (A4) -->
         <div class="certificate-card" data-format="A4">
+          <div class="certificate-content">
+            <h3>📜 Cambridge TKT</h3>
+            <p>Сертификат подтверждающий профессиональную квалификацию</p>
+          </div>
           <div class="certificate-image" style="background-image: url('Papers/TKT.jpg');"></div>
         </div>
         <!-- Foxford Course (4:3) -->
         <div class="certificate-card" data-format="4:3">
+          <div class="certificate-content">
+            <h3>🎯 Курс повышения квалификации "Фоксфорд"</h3>
+            <p>Углублённое обучение английскому языку при подготовке к ОГЭ и ЕГЭ</p>
+          </div>
           <div class="certificate-image" style="background-image: url('Papers/Foxford.png');"></div>
         </div>
-        <!-- Master’s Degree (A4) -->
+        <!-- Master's Degree (A4) -->
         <div class="certificate-card" data-format="A4">
+          <div class="certificate-content">
+            <h3>🏆 Cape Peninsula University of Technology</h3>
+            <p>Степень магистра в области педагогики</p>
+          </div>
           <div class="certificate-image" style="background-image: url('Papers/Master\'s\ degree.png');"></div>
         </div>
       </div>
@@ -577,7 +717,7 @@
           </div>
         </div>
         <div style="margin-top: 3rem;">
-          <a href="#" class="cta-button">Записаться на пробный урок</a>
+          <button class="cta-button" onclick="openModal()">Записаться на пробный урок</button>
         </div>
       </div>
     </div>
@@ -590,6 +730,47 @@
       <p style="margin-top: 0.5rem; opacity: 0.8;">Преподаватель английского языка</p>
     </div>
   </footer>
+
+  <!-- Modal for booking -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2 class="modal-title">Записаться на урок</h2>
+      <form id="bookingForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label class="form-label" for="name">Имя *</label>
+          <input type="text" id="name" name="name" class="form-input" required placeholder="Как к вам обращаться?">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="contact">Контакт *</label>
+          <input type="text" id="contact" name="contact" class="form-input" required placeholder="Телефон, email, Telegram - любой удобный способ связи">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="goal">Цель обучения</label>
+          <select id="goal" name="goal" class="form-select">
+            <option value="">Выберите цель</option>
+            <option value="conversation">Разговорная практика</option>
+            <option value="exam_ege">Подготовка к ЕГЭ</option>
+            <option value="exam_oge">Подготовка к ОГЭ</option>
+            <option value="business">Деловой английский</option>
+            <option value="travel">Английский для путешествий</option>
+            <option value="beginner">Изучение с нуля</option>
+            <option value="intermediate">Повышение уровня</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" class="form-textarea" placeholder="Расскажите о своем опыте изучения английского, пожелания к урокам или любая другая информация..."></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
 
   <script>
     // Плавная прокрутка по якорям
@@ -639,6 +820,148 @@
       });
     });
 
+    // Modal functions
+    function openModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('bookingModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Form submission
+    async function submitForm(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      // Show loading state
+      const submitBtn = event.target.querySelector('.form-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Отправляем...';
+      submitBtn.disabled = true;
+      
+      try {
+        // Format message for Telegram
+        let message = `🎓 *Новая заявка на урок!*\n\n`;
+        message += `👤 *Имя:* ${data.name}\n`;
+        message += `📞 *Контакт:* ${data.contact}\n`;
+        
+        if (data.goal) {
+          const goals = {
+            'conversation': 'Разговорная практика',
+            'exam_ege': 'Подготовка к ЕГЭ',
+            'exam_oge': 'Подготовка к ОГЭ',
+            'business': 'Деловой английский',
+            'travel': 'Английский для путешествий',
+            'beginner': 'Изучение с нуля',
+            'intermediate': 'Повышение уровня',
+            'other': 'Другое'
+          };
+          message += `🎯 *Цель:* ${goals[data.goal]}\n`;
+        }
+        
+        if (data.comment.trim()) {
+          message += `💬 *Комментарий:* ${data.comment}\n`;
+        }
+        
+        message += `\n📅 *Время заявки:* ${new Date().toLocaleString('ru-RU')}`;
+        
+        // Send to Telegram
+        const telegramToken = '7661355079:AAFuwrMyfeJCVeX9Hlu_4ltuu-pCu1mkPQI';
+        const chatId = '7661355079';
+        
+        const response = await fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+          })
+        });
+        
+        if (response.ok) {
+          // Success
+          submitBtn.textContent = '✅ Отправлено!';
+          submitBtn.style.background = '#48bb78';
+          
+          // Show success message
+          alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
+          
+          // Reset form and close modal
+          event.target.reset();
+          setTimeout(() => {
+            closeModal();
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 2000);
+          
+        } else {
+          throw new Error('Ошибка отправки');
+        }
+        
+      } catch (error) {
+        console.error('Ошибка:', error);
+        
+        // Fallback to WhatsApp/Telegram
+        let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
+        fallbackMessage += `👤 Имя: ${data.name}\n`;
+        fallbackMessage += `📞 Контакт: ${data.contact}\n`;
+        
+        if (data.goal) {
+          const goals = {
+            'conversation': 'Разговорная практика',
+            'exam_ege': 'Подготовка к ЕГЭ',
+            'exam_oge': 'Подготовка к ОГЭ',
+            'business': 'Деловой английский',
+            'travel': 'Английский для путешествий',
+            'beginner': 'Изучение с нуля',
+            'intermediate': 'Повышение уровня',
+            'other': 'Другое'
+          };
+          fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
+        }
+        
+        if (data.comment.trim()) {
+          fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
+        }
+        
+        const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
+        
+        if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
+          window.open(whatsappUrl, '_blank');
+          event.target.reset();
+          closeModal();
+        }
+        
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    }
   </script>
 </body>
 </html>
