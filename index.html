@@ -847,121 +847,89 @@
       }
     });
 
-    // Form submission
-    async function submitForm(event) {
-      event.preventDefault();
+// Form submission
+async function submitForm(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  
+  // Show loading state
+  const submitBtn = event.target.querySelector('.form-submit');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Отправляем...';
+  submitBtn.disabled = true;
+  
+  try {
+    // Send to Netlify Function
+    const response = await fetch('/.netlify/functions/send-telegram', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    
+    if (response.ok) {
+      // Success
+      submitBtn.textContent = '✅ Отправлено!';
+      submitBtn.style.background = '#48bb78';
       
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
+      // Show success message
+      alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
       
-      // Show loading state
-      const submitBtn = event.target.querySelector('.form-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Отправляем...';
-      submitBtn.disabled = true;
-      
-      try {
-        // Format message for Telegram
-        let message = `🎓 *Новая заявка на урок!*\n\n`;
-        message += `👤 *Имя:* ${data.name}\n`;
-        message += `📞 *Контакт:* ${data.contact}\n`;
-        
-        if (data.goal) {
-          const goals = {
-            'conversation': 'Разговорная практика',
-            'exam_ege': 'Подготовка к ЕГЭ',
-            'exam_oge': 'Подготовка к ОГЭ',
-            'business': 'Деловой английский',
-            'travel': 'Английский для путешествий',
-            'beginner': 'Изучение с нуля',
-            'intermediate': 'Повышение уровня',
-            'other': 'Другое'
-          };
-          message += `🎯 *Цель:* ${goals[data.goal]}\n`;
-        }
-        
-        if (data.comment.trim()) {
-          message += `💬 *Комментарий:* ${data.comment}\n`;
-        }
-        
-        message += `\n📅 *Время заявки:* ${new Date().toLocaleString('ru-RU')}`;
-        
-        // Send to Telegram
-        const telegramToken = '7661355079:AAFuwrMyfeJCVeX9Hlu_4ltuu-pCu1mkPQI';
-        const chatId = '7661355079';
-        
-        const response = await fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: 'Markdown'
-          })
-        });
-        
-        if (response.ok) {
-          // Success
-          submitBtn.textContent = '✅ Отправлено!';
-          submitBtn.style.background = '#48bb78';
-          
-          // Show success message
-          alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
-          
-          // Reset form and close modal
-          event.target.reset();
-          setTimeout(() => {
-            closeModal();
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 2000);
-          
-        } else {
-          throw new Error('Ошибка отправки');
-        }
-        
-      } catch (error) {
-        console.error('Ошибка:', error);
-        
-        // Fallback to WhatsApp/Telegram
-        let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
-        fallbackMessage += `👤 Имя: ${data.name}\n`;
-        fallbackMessage += `📞 Контакт: ${data.contact}\n`;
-        
-        if (data.goal) {
-          const goals = {
-            'conversation': 'Разговорная практика',
-            'exam_ege': 'Подготовка к ЕГЭ',
-            'exam_oge': 'Подготовка к ОГЭ',
-            'business': 'Деловой английский',
-            'travel': 'Английский для путешествий',
-            'beginner': 'Изучение с нуля',
-            'intermediate': 'Повышение уровня',
-            'other': 'Другое'
-          };
-          fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
-        }
-        
-        if (data.comment.trim()) {
-          fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
-        }
-        
-        const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
-        
-        if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
-          window.open(whatsappUrl, '_blank');
-          event.target.reset();
-          closeModal();
-        }
-        
-        // Reset button
+      // Reset form and close modal
+      event.target.reset();
+      setTimeout(() => {
+        closeModal();
         submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
         submitBtn.disabled = false;
-      }
+      }, 2000);
+      
+    } else {
+      throw new Error('Ошибка отправки');
     }
+    
+  } catch (error) {
+    console.error('Ошибка:', error);
+    
+    // Fallback to WhatsApp
+    let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
+    fallbackMessage += `👤 Имя: ${data.name}\n`;
+    fallbackMessage += `📞 Контакт: ${data.contact}\n`;
+    
+    if (data.goal) {
+      const goals = {
+        'conversation': 'Разговорная практика',
+        'exam_ege': 'Подготовка к ЕГЭ',
+        'exam_oge': 'Подготовка к ОГЭ',
+        'business': 'Деловой английский',
+        'travel': 'Английский для путешествий',
+        'beginner': 'Изучение с нуля',
+        'intermediate': 'Повышение уровня',
+        'other': 'Другое'
+      };
+      fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
+    }
+    
+    if (data.comment.trim()) {
+      fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
+    }
+    
+    const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
+    
+    if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
+      window.open(whatsappUrl, '_blank');
+      event.target.reset();
+      closeModal();
+    }
+    
+    // Reset button
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
+}
   </script>
 </body>
 </html>
