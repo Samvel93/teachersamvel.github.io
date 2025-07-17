@@ -93,7 +93,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-size: 1rem;
       animation: float 6s ease-in-out infinite;
       object-fit: cover;
     }
@@ -108,8 +108,52 @@
     }
     .hero-subtitle {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       opacity: 0.9;
+    }
+    .hero-name {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #ffffff;
+      display: block;
+      margin: 1rem;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 2rem 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-feature {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .hero-feature:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .hero-features {
+        gap: 0.6rem;
+      }
+      
+      .hero-feature {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
     }
     .cta-button {
       display: inline-block;
@@ -120,6 +164,8 @@
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: none;
+      cursor: pointer;
     }
     .cta-button:hover {
       transform: translateY(-3px);
@@ -290,9 +336,19 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      /* Единый формат для всех карточек */
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    /* Разные пропорции для разных форматов */
+    .certificate-card[data-format="4:3"] {
       aspect-ratio: 4 / 3;
-      transition: box-shadow 0.3s ease;
+    }
+    .certificate-card[data-format="A4"] {
+      aspect-ratio: 3 / 4;
+    }
+    .certificate-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
     }
     .certificate-content {
       position: absolute;
@@ -319,13 +375,60 @@
       background-position: center center;
       opacity: 1;
     }
-    .certificate-card:hover {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    /* Modal для сертификатов */
+    .certificate-modal {
+      display: none;
+      position: fixed;
+      z-index: 3000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(5px);
     }
-    @media (max-width: 576px) {
-      .certificate-card {
-        max-width: 100%;
-      }
+    .certificate-modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+    .certificate-modal-content {
+      max-width: min(90vw, 800px);
+      max-height: min(80vh, 800px);
+      position: relative;
+      background: white;
+      border-radius: 15px;
+      padding: 0.5rem;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    .certificate-modal-image {
+      width: 100%;
+      height: 100%;
+      max-height: calc(80vh - 2rem);
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .certificate-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .certificate-modal-close:hover {
+      background: rgba(255, 255, 255, 0.4);
     }
     /* Video Section */
     .video-container {
@@ -540,6 +643,9 @@
       .hero-subtitle {
         font-size: 1rem;
       }
+      .certificate-card {
+        max-width: 100%;
+      }
     }
     /* Scroll animations */
     .fade-in {
@@ -578,10 +684,16 @@
     <div class="floating-element">✏️</div>
     <div class="floating-element">✈️</div>
     <div class="hero-content">
-      <img class="hero-avatar" src="Pics/avatar.JPG" alt="Самвел Шишманян" />
-      <h1>Самвел Шишманян</h1>
-      <p class="hero-subtitle">Преподаватель английского языка<br />с 7-летним опытом</p>
-      <a href="#contact" class="cta-button" onclick="openModal()">Записаться на урок</a>
+      <h1>Английский с результатом</h1>
+      <p class="hero-subtitle">
+      <span class="hero-name">Самвел Шишманян</span><br />
+      7 лет опыта • 100+ довольных учеников
+      <div class="hero-features">
+      <div class="hero-feature">💬 Разговорная практика с первого урока</div>
+      <div class="hero-feature">📈 Гарантированный результат</div>
+      <div class="hero-feature">🎯 Составление индивидульной программы</div>
+     </div>
+      <button class="cta-button" onclick="openModal()">Записаться на урок</button>
     </div>
   </section>
 
@@ -616,7 +728,7 @@
         <div class="method-card">
           <div class="method-icon">💬</div>
           <h3>Разговорная практика</h3>
-          <p>Мы будем много говорить, уже с первого урока! Использую современные темы и реальные жизненные ситуации для развития навыков общения.</p>
+          <p>Мы будем много говорить, уже с первого урока! Будем обсуждать актуальные темы и реальные жизненные ситуации для развития навыков общения.</p>
         </div>
         <div class="method-card">
           <div class="method-icon">🎵</div>
@@ -638,7 +750,7 @@
       <h2 class="section-title fade-in">Образование и квалификации</h2>
       <div class="certificates-grid fade-in">
         <!-- TESOL Certificate (4:3) -->
-        <div class="certificate-card" data-format="4:3">
+        <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/TESOL certificate.jpg')">
           <div class="certificate-content">
             <h3>🎓 TESOL Certificate</h3>
             <p>Международная квалификация преподавателя английского языка</p>
@@ -646,7 +758,7 @@
           <div class="certificate-image" style="background-image: url('Papers/TESOL certificate.jpg');"></div>
         </div>
         <!-- Cambridge TKT (A4) -->
-        <div class="certificate-card" data-format="A4">
+        <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/TKT.jpg')">
           <div class="certificate-content">
             <h3>📜 Cambridge TKT</h3>
             <p>Сертификат подтверждающий профессиональную квалификацию</p>
@@ -654,7 +766,7 @@
           <div class="certificate-image" style="background-image: url('Papers/TKT.jpg');"></div>
         </div>
         <!-- Foxford Course (4:3) -->
-        <div class="certificate-card" data-format="4:3">
+        <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/Foxford.png')">
           <div class="certificate-content">
             <h3>🎯 Курс повышения квалификации "Фоксфорд"</h3>
             <p>Углублённое обучение английскому языку при подготовке к ОГЭ и ЕГЭ</p>
@@ -662,7 +774,7 @@
           <div class="certificate-image" style="background-image: url('Papers/Foxford.png');"></div>
         </div>
         <!-- Master's Degree (A4) -->
-        <div class="certificate-card" data-format="A4">
+        <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/Master\'s\ degree.png')">
           <div class="certificate-content">
             <h3>🏆 Cape Peninsula University of Technology</h3>
             <p>Степень магистра в области педагогики</p>
@@ -772,6 +884,14 @@
     </div>
   </div>
 
+  <!-- Modal for certificates -->
+  <div id="certificateModal" class="certificate-modal">
+    <div class="certificate-modal-content">
+      <button class="certificate-modal-close" onclick="closeCertificateModal()">&times;</button>
+      <img id="certificateModalImage" class="certificate-modal-image" src="" alt="Сертификат">
+    </div>
+  </div>
+
   <script>
     // Плавная прокрутка по якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -820,7 +940,7 @@
       });
     });
 
-    // Modal functions
+    // Modal functions для формы записи
     function openModal() {
       const modal = document.getElementById('bookingModal');
       modal.classList.add('show');
@@ -844,92 +964,115 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeModal();
+        closeCertificateModal();
       }
     });
 
-// Form submission
-async function submitForm(event) {
-  event.preventDefault();
-  
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
-  
-  // Show loading state
-  const submitBtn = event.target.querySelector('.form-submit');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Отправляем...';
-  submitBtn.disabled = true;
-  
-  try {
-    // Send to Netlify Function
-    const response = await fetch('/.netlify/functions/send-telegram', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
+    // Certificate modal functions
+    function openCertificateModal(imageSrc) {
+      const modal = document.getElementById('certificateModal');
+      const modalImage = document.getElementById('certificateModalImage');
+      modalImage.src = imageSrc;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertificateModal() {
+      const modal = document.getElementById('certificateModal');
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close certificate modal when clicking outside
+    document.getElementById('certificateModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeCertificateModal();
+      }
     });
-    
-    if (response.ok) {
-      // Success
-      submitBtn.textContent = '✅ Отправлено!';
-      submitBtn.style.background = '#48bb78';
+
+    // Form submission
+    async function submitForm(event) {
+      event.preventDefault();
       
-      // Show success message
-      alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
       
-      // Reset form and close modal
-      event.target.reset();
-      setTimeout(() => {
-        closeModal();
+      // Show loading state
+      const submitBtn = event.target.querySelector('.form-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Отправляем...';
+      submitBtn.disabled = true;
+      
+      try {
+        // Send to Netlify Function
+        const response = await fetch('/.netlify/functions/send-telegram', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+          // Success
+          submitBtn.textContent = '✅ Отправлено!';
+          submitBtn.style.background = '#48bb78';
+          
+          // Show success message
+          alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
+          
+          // Reset form and close modal
+          event.target.reset();
+          setTimeout(() => {
+            closeModal();
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 2000);
+          
+        } else {
+          throw new Error('Ошибка отправки');
+        }
+        
+      } catch (error) {
+        console.error('Ошибка:', error);
+        
+        // Fallback to WhatsApp
+        let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
+        fallbackMessage += `👤 Имя: ${data.name}\n`;
+        fallbackMessage += `📞 Контакт: ${data.contact}\n`;
+        
+        if (data.goal) {
+          const goals = {
+            'conversation': 'Разговорная практика',
+            'exam_ege': 'Подготовка к ЕГЭ',
+            'exam_oge': 'Подготовка к ОГЭ',
+            'business': 'Деловой английский',
+            'travel': 'Английский для путешествий',
+            'beginner': 'Изучение с нуля',
+            'intermediate': 'Повышение уровня',
+            'other': 'Другое'
+          };
+          fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
+        }
+        
+        if (data.comment.trim()) {
+          fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
+        }
+        
+        const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
+        
+        if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
+          window.open(whatsappUrl, '_blank');
+          event.target.reset();
+          closeModal();
+        }
+        
+        // Reset button
         submitBtn.textContent = originalText;
-        submitBtn.style.background = '';
         submitBtn.disabled = false;
-      }, 2000);
-      
-    } else {
-      throw new Error('Ошибка отправки');
+      }
     }
-    
-  } catch (error) {
-    console.error('Ошибка:', error);
-    
-    // Fallback to WhatsApp
-    let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
-    fallbackMessage += `👤 Имя: ${data.name}\n`;
-    fallbackMessage += `📞 Контакт: ${data.contact}\n`;
-    
-    if (data.goal) {
-      const goals = {
-        'conversation': 'Разговорная практика',
-        'exam_ege': 'Подготовка к ЕГЭ',
-        'exam_oge': 'Подготовка к ОГЭ',
-        'business': 'Деловой английский',
-        'travel': 'Английский для путешествий',
-        'beginner': 'Изучение с нуля',
-        'intermediate': 'Повышение уровня',
-        'other': 'Другое'
-      };
-      fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
-    }
-    
-    if (data.comment.trim()) {
-      fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
-    }
-    
-    const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
-    
-    if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
-      window.open(whatsappUrl, '_blank');
-      event.target.reset();
-      closeModal();
-    }
-    
-    // Reset button
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  }
-}
   </script>
 </body>
 </html>
