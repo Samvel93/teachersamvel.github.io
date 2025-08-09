@@ -1,332 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Самвел Шишманян - Учитель английского языка</title>
-  <link rel="icon" href="Pics/icons8-english-96.png" type="image/png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Индивидуальные уроки английского — Самвел | Пробный 30 мин</title>
+  <meta name="description" content="Индивидуальные уроки английского с TESOL‑преподавателем. Разговорный английский без воды: чёткий план на 4 недели, контроль прогресса, гибкий график. Пробный урок 30 минут." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Индивидуальные уроки английского — Самвел" />
+  <meta property="og:description" content="Разговорный английский за 4 недели: 2 занятия/нед + чек‑лист прогресса. Пробный 30 минут." />
+  <meta name="theme-color" content="#111827" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #2d3748;
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      scroll-behavior: smooth;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Header */
-    .header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #2b6cb0;
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-    .nav-links a {
-      color: #2d3748;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: #2b6cb0;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #2d3748;
-    }
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content {
-      z-index: 2;
-      animation: fadeInUp 1s ease-out;
-    }
-    .hero-avatar {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      border-radius: 50%;
-      border: 6px solid rgba(255, 255, 255, 0.3);
-      margin: 0 auto 2rem;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      animation: float 6s ease-in-out infinite;
-      object-fit: cover;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, #fff, #e2e8f0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      opacity: 0.9;
-    }
-    .hero-name {
-      font-size: 1.2em;
-      font-weight: 600;
-      color: #ffffff;
-      display: block;
-      margin: 1rem;
-    }
+    :root{--bg:#0b1220;--panel:#0f172a;--muted:#94a3b8;--text:#e8edf7;--brand:#6ee7b7;--brand-2:#22d3ee;--ring:rgba(34,211,238,.35);--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.25);--container:1120px}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1100px 520px at 70% -10%,rgba(110,231,183,.14),transparent 62%),radial-gradient(900px 480px at 10% -20%,rgba(34,211,238,.10),transparent 60%),var(--bg)}.container{max-width:var(--container);margin:0 auto;padding:0 20px}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.75);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(148,163,184,.12)}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.logo{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 220deg,var(--brand),var(--brand-2));box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+    .nav-links{display:flex;align-items:center;gap:20px}.nav-links a{padding:8px 10px;border-radius:10px;color:var(--muted)}.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--text);background:rgba(148,163,184,.12)}
+    .lang-switch{display:flex;align-items:center;gap:8px}.lang-switch button{border:1px solid rgba(148,163,184,.25);background:transparent;color:var(--text);padding:6px 10px;border-radius:10px;cursor:pointer}.lang-switch button[aria-pressed="true"]{border-color:var(--brand-2);box-shadow:0 0 0 3px var(--ring)}
+    .menu-btn{display:none;border:1px solid rgba(148,163,184,.25);background:transparent;color:var(--text);padding:8px 10px;border-radius:10px}
+    @media (max-width: 860px){.menu-btn{display:inline-flex}.nav-links{display:none;position:absolute;left:20px;right:20px;top:70px;flex-direction:column;background:var(--panel);padding:12px;border-radius:14px;box-shadow:var(--shadow)}.nav-links.active{display:flex}}
+    .hero{padding:72px 0 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center}.hero h1{font-weight:800;line-height:1.1;font-size:clamp(28px,4vw,54px);margin:0 0 14px}.hero .lead{font-size:clamp(16px,1.8vw,20px);color:var(--muted);margin-bottom:18px}.badges{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}.badge{font-size:13px;color:#0b1220;background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:6px 10px;border-radius:999px;font-weight:600}.hero-cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(148,163,184,.25);color:var(--text);padding:12px 16px;border-radius:12px;cursor:pointer}.btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b1220;border:0;font-weight:700}.btn-outline:hover{border-color:var(--brand-2)}
+    @media (max-width: 960px){.hero{grid-template-columns:1fr;padding-top:40px}}
+    section{padding:64px 0}.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px}h2{margin:0;font-size:clamp(22px,3vw,36px)}.muted{color:var(--muted)}
+    .video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;border:1px solid rgba(148,163,184,.12);box-shadow:var(--shadow)}.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%}
+    .grid{display:grid;gap:16px}.grid-3{grid-template-columns:repeat(3,1fr)}@media (max-width: 900px){.grid-3{grid-template-columns:1fr}}.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.price{font-size:30px;font-weight:800;margin:8px 0 10px}.perks{padding-left:18px;margin:10px 0 0}.tag{display:inline-block;font-size:12px;color:#0b1220;background:var(--brand);border-radius:999px;padding:4px 8px;font-weight:700}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width: 900px){.steps{grid-template-columns:1fr}}.step h3{margin:0 0 6px;font-size:20px}
+    .faq details{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.12);border-radius:14px;padding:14px 16px;margin-bottom:12px}.faq summary{cursor:pointer;font-weight:600}
+    form{display:grid;gap:12px}label{font-weight:600}input,select,textarea{width:100%;padding:12px 14px;background:#0b1220;border:1px solid rgba(148,163,184,.25);border-radius:12px;color:var(--text)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--ring)}.consent{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}.consent input{margin-top:3px}.note{font-size:13px;color:var(--muted)}.success{display:none;background:rgba(16,185,129,.12);color:#cffafe;border:1px solid rgba(34,211,238,.25);padding:10px 12px;border-radius:12px}.error{display:none;background:rgba(239,68,68,.12);color:#fecaca;border:1px solid rgba(239,68,68,.35);padding:10px 12px;border-radius:12px}
+    .contacts a{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border:1px solid rgba(148,163,184,.25);border-radius:10px}
+    .sticky-cta{position:fixed;bottom:12px;left:12px;right:12px;display:none;z-index:60}.sticky-cta .inner{display:flex;gap:10px;background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(255,255,255,.03));backdrop-filter:blur(6px);border:1px solid rgba(148,163,184,.2);padding:10px;border-radius:14px;box-shadow:var(--shadow)}@media (max-width: 820px){.sticky-cta{display:block}}
+    footer{padding:28px 0 40px;color:var(--muted)}
 
-    .hero-features {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      margin: 2rem 0;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    /* Certificates (exact ratios and params from original) */
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* всегда 4 колонки на десктопе */
+    gap: 20px; /* расстояние между карточками — меняй по вкусу */
+    justify-items: center;
+}
 
-    .hero-feature {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .hero-feature:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 768px) {
-      .hero-features {
-        gap: 0.6rem;
-      }
-      
-      .hero-feature {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      color: white;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      border: none;
-      cursor: pointer;
-    }
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-    .floating-element {
-      position: absolute;
-      opacity: 0.1;
-      animation: float 8s ease-in-out infinite;
-    }
-    .floating-element:nth-child(1) {
-      top: 20%;
-      left: 10%;
-      animation-delay: -2s;
-    }
-    .floating-element:nth-child(2) {
-      top: 60%;
-      right: 10%;
-      animation-delay: -4s;
-    }
-    .floating-element:nth-child(3) {
-      bottom: 20%;
-      left: 20%;
-      animation-delay: -6s;
-    }
-    .floating-element:nth-child(4) {
-      top: 25%;
-      right: 30%;
-      animation-delay: -3s;
-    }
-    .floating-element:nth-child(5) {
-      top: 50%;
-      right: 80%;
-      animation-delay: -8s;
-    }
-    .floating-element:nth-child(6) {
-      bottom: 10%;
-      right: 15%;
-      animation-delay: -1s;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-    /* Sections */
-    .section {
-      padding: 5rem 0;
-      background: white;
-      position: relative;
-    }
-    .section:nth-child(even) {
-      background: #f7fafc;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-      color: #2d3748;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      border-radius: 2px;
-    }
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .about-image {
-      text-align: center;
-    }
-    .about-photo {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 12px;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 6rem;
-      color: white;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .about-photo:hover {
-      transform: scale(1.05);
-    }
-    .about-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #4a5568;
-    }
-    /* Teaching Method Section */
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .method-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(43, 108, 176, 0.1);
-    }
-    .method-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    }
-    .method-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    .method-card h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #2d3748;
-    }
-    /* Certificates Section */
+/* Мобильная адаптация: на узких экранах 2 колонки */
+@media (max-width: 768px) {
     .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
     }
+}
     .certificate-card {
       position: relative;
       width: 100%;
@@ -339,641 +58,425 @@
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       cursor: pointer;
     }
-    /* Разные пропорции для разных форматов */
-    .certificate-card[data-format="4:3"] {
-      aspect-ratio: 4 / 3;
-    }
-    .certificate-card[data-format="A4"] {
-      aspect-ratio: 3 / 4;
-    }
-    .certificate-card:hover {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-      transform: translateY(-5px);
-    }
+    /* Aspect ratios */
+    .certificate-card[data-format="4:3"] { aspect-ratio: 4 / 3; }
+    .certificate-card[data-format="A4"] { aspect-ratio: 3 / 4; }
+    .certificate-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.2); transform: translateY(-5px); }
     .certificate-content {
       position: absolute;
       z-index: 2;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       padding: 1rem;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background: transparent;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%);
+      color: #ffffff00;
     }
+    .certificate-content h3 { font-size: 1.05rem; margin: 0; }
+    .certificate-content p  { font-size: .9rem; opacity: .9; margin-top: .25rem; }
     .certificate-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: absolute; inset: 0;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
       opacity: 1;
     }
-    /* Modal для сертификатов */
+    /* Certificate modal */
     .certificate-modal {
-      display: none;
-      position: fixed;
-      z-index: 3000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(5px);
+      display: none; position: fixed; inset: 0; z-index: 3000;
+      background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px);
     }
-    .certificate-modal.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 0.3s ease;
-    }
+    .certificate-modal.show { display: flex; align-items: center; justify-content: center; }
     .certificate-modal-content {
-      max-width: min(90vw, 800px);
-      max-height: min(80vh, 800px);
-      position: relative;
-      background: white;
-      border-radius: 15px;
-      padding: 0.5rem;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
-      overflow: hidden;
+      max-width: 90vw; max-height: 90vh; position: relative;
+      display: flex; align-items: center; justify-content: center;
     }
-    .certificate-modal-image {
-      width: 100%;
-      height: 100%;
-      max-height: calc(80vh - 2rem);
-      object-fit: contain;
-      border-radius: 8px;
+    .certificate-modal-content img {
+      width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 8px;
     }
     .certificate-modal-close {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+      position: absolute; top: -40px; right: 0;
+      background: rgba(255,255,255,0.2); border: none; color: white;
+      font-size: 2rem; cursor: pointer; width: 40px; height: 40px; border-radius: 50%;
     }
-    .certificate-modal-close:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-    /* Video Section */
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .video-placeholder {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 3rem;
-      margin-bottom: 2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .video-placeholder:hover {
-      transform: scale(1.02);
-    }
-    /* Contact Section */
-    .contact-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .contact-item:hover {
-      transform: translateY(-3px);
-    }
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(5px);
-    }
-    .modal.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 0.3s ease;
-    }
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-      max-width: 500px;
-      width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      animation: slideUp 0.3s ease;
-    }
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #666;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-    }
-    .modal-close:hover {
-      background: #f0f0f0;
-      color: #333;
-    }
-    .modal-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #2d3748;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    .form-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #2d3748;
-    }
-    .form-input,
-    .form-select,
-    .form-textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
-      outline: none;
-      border-color: #2b6cb0;
-      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
-    }
-    .form-textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-    .form-submit {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(45deg, #2b6cb0, #1a365d);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(43, 108, 176, 0.3);
-    }
-    .form-submit:active {
-      transform: translateY(0);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { 
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-    /* Footer */
-    .footer {
-      background: #2d3748;
-      color: white;
-      text-align: center;
-      padding: 2rem 0;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .contact-info {
-        flex-direction: column;
-        align-items: center;
-      }
-      .section {
-        padding: 3rem 0;
-      }
-    }
-    @media (max-width: 576px) {
-      .floating-element {
-        display: none;
-      }
-      .about-text p,
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-      .certificate-card {
-        max-width: 100%;
-      }
-    }
-    /* Scroll animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+    .section--certs{padding-block:80px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00))}
+    .certs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;list-style:none;margin:5px 0 0;padding:0}
+    .cert{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.12);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .cert__meta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;font-size:14px;color:#cbd5e1}
+    .cert__meta strong{color:#e8edf7;font-weight:700}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:grid;place-items:center;padding:20px;z-index:1000}
+    .lightbox[hidden]{display:none}
+    .lightbox__img{max-width:min(1200px,90vw);max-height:90vh;border-radius:10px}
+    .lightbox__close{position:absolute;top:16px;right:16px;font-size:28px;line-height:1;background:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer}
+    @media (min-width: 900px){.certs-grid{grid-template-columns:repeat(4,1fr)}}
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="nav container">
-      <div class="logo">English Teacher</div>
-      <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
-      <ul class="nav-links">
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#method">Как я преподаю</a></li>
-        <li><a href="#certificates">Образование</a></li>
-        <li><a href="#video">Пример урока</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </nav>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="На главную">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Samvel · English</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">☰</button>
+      <nav class="nav-links" id="primaryNav" aria-label="Главное меню">
+        <a href="#about" data-en="About">О курсе</a>
+        <a href="#video" data-en="Lesson Preview">Видео</a>
+        <a href="#pricing" data-en="Packages">Курсы</a>
+        <a href="#approach" data-en="How It Works">Подход</a>
+        <a href="#certs" data-en="Certificates">Сертификаты</a>
+        <a href="#faq" data-en="FAQ">FAQ</a>
+        <a href="#contact" data-en="Contact">Контакты</a>
+        <div class="lang-switch" role="group" aria-label="Language switch">
+          <button type="button" id="ruBtn" aria-pressed="true">RU</button>
+          <button type="button" id="enBtn" aria-pressed="false">EN</button>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="floating-element">📚</div>
-    <div class="floating-element">🎓</div>
-    <div class="floating-element">✨</div>
-    <div class="floating-element">🌍</div>
-    <div class="floating-element">✏️</div>
-    <div class="floating-element">✈️</div>
-    <div class="hero-content">
-      <h1>Английский с результатом</h1>
-      <p class="hero-subtitle">
-      <span class="hero-name">Самвел Шишманян</span><br />
-      7 лет опыта • 100+ довольных учеников
-      <div class="hero-features">
-      <div class="hero-feature">💬 Разговорная практика с первого урока</div>
-      <div class="hero-feature">📈 Гарантированный результат</div>
-      <div class="hero-feature">🎯 Составление индивидульной программы</div>
-     </div>
-      <button class="cta-button" onclick="openModal()">Записаться на урок</button>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title fade-in">Обо мне</h2>
-      <div class="about-content fade-in">
-        <div class="about-image">
-          <img class="about-photo" src="Pics/avatar.JPG" alt="Фото Самвела" />
+  <main id="top">
+    <section class="hero container" id="hero">
+      <div>
+        <div class="badges">
+          <span class="badge" data-en="TESOL Certified">TESOL сертификат</span>
+          <span class="badge" data-en="1:1 Online / Offline">1:1 онлайн / офлайн</span>
         </div>
-        <div class="about-text">
-          <p>Привет! Меня зовут Самвел, и я занимаюсь преподаванием английского языка уже более 7 лет. За это время я помог сотням студентов достичь своих целей в изучении английского языка.</p>
-          <p>Помогаю людям начать уверенно говорить и специализируюсь на подготовке к экзаменам, ЕГЭ, ОГЭ. C удовольствием работаю как с детьми так и со взрослыми.</p>
-          <p>Работаю на структурированную и четкую систему обучения.</p>
-          <p>Я использую эклектический подход, который сочетает в себе элементы разных методов в зависимости от целей и уровня студента (коммуникативный, рецептивный и т.д.).</p>
+        <h1 data-en="Speak confidently in 4 weeks: 2 lessons/week + progress checklist">Заговоришь уверенно за 4 недели: 2 занятия/нед + чек‑лист прогресса</h1>
+        <p class="lead" data-en="Clear plan without fluff. Focus on speaking, listening and real dialogs.">Чёткий план без воды. Упор на разговор, понимание речи и реальные диалоги.</p>
+        <div class="hero-card">
+          <ul>
+            <li data-en="Free 30‑min trial lesson">Пробный урок 30 минут — бесплатно</li>
+            <li data-en="Personal roadmap and homework that takes ≤ 20 min">Личная дорожная карта и ДЗ ≤ 20 мин</li>
+            <li data-en="Transparent progress checklist after each week">Прозрачный чек‑лист прогресса каждую неделю</li>
+          </ul>
+        </div>
+        <div class="hero-cta" style="margin-top:14px">
+          <a class="btn btn-primary" href="#contact" data-en="Book a trial">Записаться на пробный</a>
+          <a class="btn btn-outline" href="#pricing" data-en="See packages & pricing">Смотреть пакеты и цены</a>
+        </div>
+        <p class="note" style="margin-top:8px" data-en="No overpromises — just disciplined work and measurable results.">Без завышенных обещаний — только дисциплина и измеримый прогресс.</p>
+      </div>
+      <div><img src="Pics/avatar.JPG" alt="Самвел Шишманян — преподаватель английского" style="border-radius:16px; border:1px solid rgba(148,163,184,.15); box-shadow:0 10px 30px rgba(0,0,0,.25); max-width:100%; height:auto"></div>
+    </section>
+
+    <section class="container" id="about">
+      <div class="section-head">
+        <h2 data-en="About the course">О курсе</h2>
+        <p class="muted" data-en="Designed for Russian‑speaking learners">Для русскоязычных учеников</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card step">
+          <h3 data-en="Focus on speaking">Фокус на говорении</h3>
+          <p class="muted" data-en="Dialogs, retellings, role‑plays. You speak 70% of the lesson.">Диалоги, пересказы, ролевые игры. 70% времени — говорите вы.</p>
+        </div>
+        <div class="card step">
+          <h3 data-en="Grammar without pain">Грамматика без боли</h3>
+          <p class="muted" data-en="Targeted fixes for your typical mistakes, not textbooks from scratch.">Точечная работа с вашими ошибками — а не учебник «с нуля».</p>
+        </div>
+        <div class="card step">
+          <h3 data-en="Tools & accountability">Инструменты и контроль</h3>
+          <p class="muted" data-en="Weekly checklist, audio feedback, and short homework.">Еженедельный чек‑лист, аудио‑обратная связь и короткие ДЗ.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Teaching Method Section -->
-  <section id="method" class="section">
-    <div class="container">
-      <h2 class="section-title fade-in">Как я преподаю</h2>
-      <div class="method-grid fade-in">
-        <div class="method-card">
-          <div class="method-icon">🎯</div>
-          <h3>Индивидуальный подход</h3>
-          <p>Разрабатываю программу под ваши цели и уровень знаний. Учитываю ваш темп обучения и предпочтения в методах изучения языка.</p>
+    <section class="container" id="video">
+      <div class="section-head">
+        <h2 data-en="Lesson preview">Как проходит урок</h2>
+        <p class="muted" data-en="3 minutes overview">3 минуты — обзор</p>
+      </div>
+      <div class="video-wrap" role="region" aria-label="Видео о том, как проходит урок">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" title="Как проходит урок" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="note" style="margin-top:10px" data-en="Replace VIDEO_ID with your video.">Замените VIDEO_ID на свой ролик.</p>
+    </section>
+
+    <section class="container" id="pricing">
+      <div class="section-head">
+        <h2 data-en="Packages & pricing">Пакеты и цены</h2>
+        <p class="muted" data-en="Prices in RUB; trial lesson is free.">Цены в рублях; пробный урок — бесплатно.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="tag" data-en="Starter">Старт</span>
+          <h3 style="margin:8px 0" data-en="4 lessons">4 занятия</h3>
+          <div class="price">10 000 ₽</div>
+          <ul class="perks">
+            <li data-en="2–3 weeks, focus on speaking basics">2–3 недели, база разговора</li>
+            <li data-en="Personal roadmap">Личная дорожная карта</li>
+            <li data-en="Homework ≤ 20 min">ДЗ ≤ 20 мин</li>
+          </ul>
+          <div style="margin-top:14px"><a class="btn btn-primary" href="#contact" data-en="Book this">Выбрать</a></div>
+        </article>
+        <article class="card">
+          <span class="tag" data-en="Conversational">Разговорный</span>
+          <h3 style="margin:8px 0" data-en="8 lessons">8 занятий</h3>
+          <div class="price">17 600 ₽</div>
+          <ul class="perks">
+            <li data-en="4–5 weeks, activate vocabulary">4–5 недель, активируем лексику</li>
+            <li data-en="Audio feedback after lessons">Аудио‑фидбек после уроков</li>
+            <li data-en="Progress checklist each week">Чек‑лист прогресса</li>
+          </ul>
+          <div style="margin-top:14px"><a class="btn btn-primary" href="#contact" data-en="Book this">Выбрать</a></div>
+        </article>
+        <article class="card">
+          <span class="tag" data-en="Intensive">Интенсив</span>
+          <h3 style="margin:8px 0" data-en="12 lessons">12 занятий</h3>
+          <div class="price">24 000 ₽</div>
+          <ul class="perks">
+            <li data-en="6–8 weeks, confident speaking">6–8 недель, уверенное говорение</li>
+            <li data-en="Role‑plays, retellings, Q&A drills">Ролевые, пересказы, Q&A</li>
+            <li data-en="Flexible rescheduling policy">Гибкие переносы</li>
+          </ul>
+          <div style="margin-top:14px"><a class="btn btn-primary" href="#contact" data-en="Book this">Выбрать</a></div>
+        </article>
+      </div>
+      <p class="note" style="margin-top:10px" data-en="Payment options discussed after the trial.">Способы оплаты обсуждаем после пробного.</p>
+    </section>
+
+    <section class="container" id="approach">
+      <div class="section-head">
+        <h2 data-en="How it works">Как это устроено</h2>
+        <p class="muted" data-en="Simple process that keeps you accountable">Простой процесс, который держит в тонусе</p>
+      </div>
+      <div class="steps">
+        <div class="card step">
+          <h3 data-en="Trial & audit">Пробный + аудит</h3>
+          <p class="muted" data-en="Short speaking test, goal‑setting, and personal plan.">Короткий спикинг‑тест, постановка целей и личный план.</p>
         </div>
-        <div class="method-card">
-          <div class="method-icon">💬</div>
-          <h3>Разговорная практика</h3>
-          <p>Мы будем много говорить, уже с первого урока! Будем обсуждать актуальные темы и реальные жизненные ситуации для развития навыков общения.</p>
+        <div class="card step">
+          <h3 data-en="Weekly sprints">Недельные спринты</h3>
+          <p class="muted" data-en="2 lessons/week + 20‑min homework.">2 урока/нед + ДЗ до 20 минут.</p>
         </div>
-        <div class="method-card">
-          <div class="method-icon">🎵</div>
-          <h3>Интерактивные методы</h3>
-          <p>Разбираем музыку, видео, игры, статьи и просто то, что вам интересно. Обсуждение интересных тем помогает запоминать материал быстрее и эффективнее.</p>
-        </div>
-        <div class="method-card">
-          <div class="method-icon">📈</div>
-          <h3>Отслеживание прогресса</h3>
-          <p>Регулярно проверяю ваши успехи, корректирую программу и отмечаю достижения. Вы всегда знаете, на каком этапе находитесь.</p>
+        <div class="card step">
+          <h3 data-en="Measure & adjust">Измеряем и настраиваем</h3>
+          <p class="muted" data-en="Checklist + audio feedback, then adjust the plan.">Чек‑лист + аудио‑фидбек и корректировка плана.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certificates Section -->
-  <section id="certificates" class="section">
-    <div class="container">
-      <h2 class="section-title fade-in">Образование и квалификации</h2>
-      <div class="certificates-grid fade-in">
-        <!-- TESOL Certificate (4:3) -->
-        <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/TESOL certificate.jpg')">
-          <div class="certificate-content">
-            <h3>🎓 TESOL Certificate</h3>
-            <p>Международная квалификация преподавателя английского языка</p>
-          </div>
-          <div class="certificate-image" style="background-image: url('Papers/TESOL certificate.jpg');"></div>
+    
+    <section class="section--certs" id="certs">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Certificates & Degrees">Сертификаты и дипломы</h2>
+          <p class="muted" data-en="Verified education and credentials">Подтверждение квалификации и обучения</p>
         </div>
-        <!-- Cambridge TKT (A4) -->
-        <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/TKT.jpg')">
-          <div class="certificate-content">
-            <h3>📜 Cambridge TKT</h3>
-            <p>Сертификат подтверждающий профессиональную квалификацию</p>
+        <div class="certificates-grid">
+          <!-- TESOL 4:3 -->
+          <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/TESOL certificate.jpg')">
+            <div class="certificate-content">
+              <h3>TESOL 120h</h3>
+              <p>International Open Academy, 2020</p>
+            </div>
+            <div class="certificate-image" style="background-image: url('Papers/TESOL certificate.jpg');"></div>
           </div>
-          <div class="certificate-image" style="background-image: url('Papers/TKT.jpg');"></div>
-        </div>
-        <!-- Foxford Course (4:3) -->
-        <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/Foxford.png')">
-          <div class="certificate-content">
-            <h3>🎯 Курс повышения квалификации "Фоксфорд"</h3>
-            <p>Углублённое обучение английскому языку при подготовке к ОГЭ и ЕГЭ</p>
+          <!-- TKT A4 -->
+          <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/TKT.jpg')">
+            <div class="certificate-content">
+              <h3>Cambridge TKT — Module 3</h3>
+              <p>University of Cambridge ESOL</p>
+            </div>
+            <div class="certificate-image" style="background-image: url('Papers/TKT.jpg');"></div>
           </div>
-          <div class="certificate-image" style="background-image: url('Papers/Foxford.png');"></div>
-        </div>
-        <!-- Master's Degree (A4) -->
-        <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/Master\'s\ degree.png')">
-          <div class="certificate-content">
-            <h3>🏆 Cape Peninsula University of Technology</h3>
-            <p>Степень магистра в области педагогики</p>
+          <!-- Foxford 4:3 -->
+          <div class="certificate-card" data-format="4:3" onclick="openCertificateModal('Papers/Foxford.png')">
+            <div class="certificate-content">
+              <h3>Фоксфорд — методика ЕГЭ (48 ч)</h3>
+              <p>Moscow, 2025</p>
+            </div>
+            <div class="certificate-image" style="background-image: url('Papers/Foxford.png');"></div>
           </div>
-          <div class="certificate-image" style="background-image: url('Papers/Master\'s\ degree.png');"></div>
+          <!-- Master's A4 -->
+          <div class="certificate-card" data-format="A4" onclick="openCertificateModal('Papers/Master\'s degree.png')">
+            <div class="certificate-content">
+              <h3>Magister Technologiae (Education)</h3>
+              <p>Cape Peninsula University of Technology, 2017</p>
+            </div>
+            <div class="certificate-image" style="background-image: url('Papers/Master\'s degree.png');"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Video Section -->
-  <section id="video" class="section">
-    <div class="container">
-      <h2 class="section-title fade-in">Пример урока</h2>
-      <div class="video-container fade-in">
-        <div class="video-placeholder" onclick="playVideo()">
-          ▶️
-          <div style="margin-left: 1rem;">
-            <div>Посмотреть видео</div>
-            <div style="font-size: 1rem; opacity: 0.8;">Фрагмент урока</div>
-          </div>
-        </div>
-        <p style="color: #666; font-size: 1.1rem;">
-          В этом видео вы увидите, как проходят мои занятия: интерактивно,
-          с позитивной атмосферой и максимальной вовлечённостью студента в процесс обучения.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title fade-in">Свяжитесь со мной</h2>
-      <div class="contact-content fade-in">
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-          Готовы начать изучение английского языка? Давайте обсудим ваши цели
-          и составим индивидуальную программу обучения!
-        </p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span>📱</span>
-            <span>+84 938852334</span>
-          </div>
-          <div class="contact-item">
-            <span>📧</span>
-            <span>samaelser@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <div class="telegram-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="12" fill="#0088cc"/>
-                <path d="M8.28 18.65l0.28-4.23 7.68-6.92c0.34-0.31-0.07-0.46-0.52-0.19L7.02 13.53l-4.09-1.28c-0.88-0.27-0.88-0.86 0.19-1.3l15.95-6.16c0.73-0.33 1.43 0.18 1.15 1.3l-2.72 12.81c-0.19 0.91-0.74 1.13-1.5 0.71L11.1 16.3l-1.99 1.93c-0.23 0.23-0.42 0.42-0.83 0.42z" fill="white"/>
-              </svg>
-           </div>
-           <span>@sh_samvel</span>
-         </div>
-        </div>
-        <div style="margin-top: 3rem;">
-          <button class="cta-button" onclick="openModal()">Записаться на пробный урок</button>
+      <div class="certificate-modal" id="certificateModal">
+        <div class="certificate-modal-content">
+          <button class="certificate-modal-close" onclick="closeCertificateModal()">×</button>
+          <img id="certificateModalImage" src="" alt="Сертификат">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Самвел Шишманян. Все права защищены.</p>
-      <p style="margin-top: 0.5rem; opacity: 0.8;">Преподаватель английского языка</p>
+
+    <section class="container faq" id="faq">
+      <div class="section-head">
+        <h2 data-en="FAQ">FAQ</h2>
+        <p class="muted" data-en="Short answers to common questions">Коротко — на частые вопросы</p>
+      </div>
+      <details>
+        <summary data-en="How long to see results?">Когда будут результаты?</summary>
+        <div class="muted" style="margin-top:8px" data-en="Most learners feel noticeable improvement in 3–4 weeks with 2 lessons/week.">Обычно заметный прогресс за 3–4 недели при 2 уроках в неделю.</div>
+      </details>
+      <details>
+        <summary data-en="Do you teach from scratch?">Берёте с нуля?</summary>
+        <div class="muted" style="margin-top:8px" data-en="Yes, but the method still focuses on speaking from day one.">Да, но упор — на говорение с первого урока.</div>
+      </details>
+      <details>
+        <summary data-en="What if I need to reschedule?">Можно переносить?</summary>
+        <div class="muted" style="margin-top:8px" data-en="Flexible rescheduling with timely notice.">Можно, при своевременном предупреждении.</div>
+      </details>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="section-head">
+        <h2 data-en="Book a trial">Записаться на пробный</h2>
+        <p class="muted" data-en="Quick form — I reply the same day.">Короткая форма — отвечу в тот же день.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:16px">
+        <form id="leadForm" novalidate>
+          <div class="success" id="okMsg" role="status" data-en="Thanks! I will contact you today.">Готово! Я свяжусь с вами сегодня.</div>
+          <div class="error" id="errMsg" role="alert" data-en="Please fill required fields and accept the privacy policy.">Заполните обязательные поля и согласие с политикой.</div>
+          <div>
+            <label for="name" data-en="Your name">Ваше имя</label>
+            <input id="name" name="name" placeholder="Иван" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="phone" data-en="Phone">Телефон</label>
+            <input id="phone" name="phone" inputmode="tel" placeholder="+7" required>
+          </div>
+          <div>
+            <label for="contact2" data-en="Email or Telegram (optional)">Email или Telegram (необязательно)</label>
+            <input id="contact2" name="contact2" placeholder="name@mail.ru / @username" autocomplete="email">
+          </div>
+          <div>
+            <label for="pack" data-en="Package">Выберите цель</label>
+            <select id="pack" name="pack" required>
+<option value="Разговорная практика">Разговорная практика</option>
+<option value="Подготовка к ЕГЭ">Подготовка к ЕГЭ</option>
+<option value="Подготовка к ОГЭ">Подготовка к ОГЭ</option>
+<option value="Деловой английский">Деловой английский</option>
+<option value="Английский для путешествий">Английский для путешествий</option>
+<option value="Изучение с нуля">Изучение с нуля</option>
+<option value="Повышение уровня">Повышение уровня</option>
+<option value="Другое">Другое</option>
+</select>
+          </div>
+          <div>
+            <label for="msg" data-en="Goal / comment">Цель / комментарий</label>
+            <textarea id="msg" name="msg" rows="4" placeholder="Например: разговор для работы, B1 к декабрю"></textarea>
+          </div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0" aria-hidden="true">
+          <div class="consent">
+            <input type="checkbox" id="agree" required>
+            <label for="agree">
+              <span data-en="I agree with the">Я соглашаюсь с</span>
+              <a href="#privacy" class="muted" data-en="privacy policy">политикой конфиденциальности</a>
+            </label>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center">
+            <button class="btn btn-primary" type="submit" data-en="Send">Отправить</button>
+            <span class="note" data-en="Average reply time — same day.">Среднее время ответа — в тот же день.</span>
+          </div>
+        </form>
+        <aside class="card">
+          <h3 style="margin-top:0" data-en="Contacts">Контакты</h3>
+          <div class="contacts" style="display:flex; flex-direction:column; gap:10px; margin-top:10px">
+            <a href="tel:+8439852334" aria-label="Позвонить">📞 +84 398 523 34</a>
+            <a href="mailto:samaelser@gmail.com" aria-label="Написать на email">✉️ samaelser@gmail.com</a>
+            <a href="https://t.me/sh_samvel" target="_blank" rel="noopener" aria-label="Написать в Telegram">💬 t.me/sh_samvel</a>
+          </div>
+          <p class="note" style="margin-top:12px" data-en="Prefer messaging first.">Предпочтительно — сначала сообщение.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta" aria-hidden="false">
+    <div class="inner">
+      <div style="flex:1">
+        <strong data-en="Free trial">Пробный бесплатно</strong>
+        <div class="note" data-en="Book a 30‑min call">Запишитесь на 30‑мин встречу</div>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="white-space:nowrap" data-en="Book now">Записаться</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>© <span id="year"></span> Samvel · English</div>
+      <div class="muted"><a href="#privacy" class="muted" data-en="Privacy policy">Политика конфиденциальности</a></div>
     </div>
   </footer>
 
-  <!-- Modal for booking -->
-  <div id="bookingModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h2 class="modal-title">Записаться на урок</h2>
-      <form id="bookingForm" onsubmit="submitForm(event)">
-        <div class="form-group">
-          <label class="form-label" for="name">Имя *</label>
-          <input type="text" id="name" name="name" class="form-input" required placeholder="Как к вам обращаться?">
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="contact">Контакт *</label>
-          <input type="text" id="contact" name="contact" class="form-input" required placeholder="Телефон, email, Telegram - любой удобный способ связи">
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="goal">Цель обучения</label>
-          <select id="goal" name="goal" class="form-select">
-            <option value="">Выберите цель</option>
-            <option value="conversation">Разговорная практика</option>
-            <option value="exam_ege">Подготовка к ЕГЭ</option>
-            <option value="exam_oge">Подготовка к ОГЭ</option>
-            <option value="business">Деловой английский</option>
-            <option value="travel">Английский для путешествий</option>
-            <option value="beginner">Изучение с нуля</option>
-            <option value="intermediate">Повышение уровня</option>
-            <option value="other">Другое</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="comment">Комментарий</label>
-          <textarea id="comment" name="comment" class="form-textarea" placeholder="Расскажите о своем опыте изучения английского, пожелания к урокам или любая другая информация..."></textarea>
-        </div>
-        
-        <button type="submit" class="form-submit">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Modal for certificates -->
-  <div id="certificateModal" class="certificate-modal">
-    <div class="certificate-modal-content">
-      <button class="certificate-modal-close" onclick="closeCertificateModal()">&times;</button>
-      <img id="certificateModalImage" class="certificate-modal-image" src="" alt="Сертификат">
-    </div>
-  </div>
-
   <script>
-    // Плавная прокрутка по якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
+    const menuBtn = document.getElementById('menuBtn');
+    const primaryNav = document.getElementById('primaryNav');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('active');
     });
-
-    // Анимации при скролле
-    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, observerOptions);
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Эффект скролла для header
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-      } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = 'none';
-      }
-    });
-
-    // Плейсхолдер для видео
-    function playVideo() {
-      alert('Здесь будет ваше видео! Добавьте ссылку на YouTube или загрузите видеофайл.');
+    const ruBtn = document.getElementById('ruBtn');
+    const enBtn = document.getElementById('enBtn');
+    const nodes = Array.from(document.querySelectorAll('[data-en]'));
+    nodes.forEach(el => el.dataset.ru = el.textContent);
+    function setLang(lang){
+      const isEN = lang === 'en';
+      document.documentElement.lang = isEN ? 'en' : 'ru';
+      nodes.forEach(el => el.textContent = isEN ? (el.dataset.en || el.dataset.ru) : (el.dataset.ru || el.dataset.en));
+      ruBtn.setAttribute('aria-pressed', String(!isEN));
+      enBtn.setAttribute('aria-pressed', String(isEN));
     }
+    ruBtn.addEventListener('click', ()=>setLang('ru'));
+    enBtn.addEventListener('click', ()=>setLang('en'));
+    const form = document.getElementById('leadForm');
+    const okMsg = document.getElementById('okMsg');
+    const errMsg = document.getElementById('errMsg');
 
-    // Hover-эффекты для метод-карточек
-    document.querySelectorAll('.method-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
+async function submitForm(e){
+  e.preventDefault();
+  errMsg.style.display = 'none';
+  okMsg.style.display = 'none';
+
+  const d = new FormData(form);
+  // honeypot
+  if (d.get('website')) return;
+
+  const data = Object.fromEntries(d.entries());
+
+  const btn = form.querySelector('button[type="submit"]');
+  const saved = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Отправляем...';
+
+  try {
+    // Send to Netlify Function
+    const response = await fetch('/.netlify/functions/send-telegram', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
     });
+    if (!response.ok) throw new Error('Bad response');
+    okMsg.style.display = 'block';
+    form.reset();
+  } catch (err) {
+    console.error(err);
+    errMsg.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = saved;
+  }
+}
 
-    // Modal functions для формы записи
-    function openModal() {
-      const modal = document.getElementById('bookingModal');
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
+form?.addEventListener('submit', submitForm);
 
-    function closeModal() {
-      const modal = document.getElementById('bookingModal');
-      modal.classList.remove('show');
-      document.body.style.overflow = 'auto';
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const lb=document.getElementById('lightbox'); const lbImg=lb?.querySelector('.lightbox__img');
+    document.addEventListener('click',(e)=>{ const link=e.target.closest('.cert__link'); if(link){ e.preventDefault();
+      const href=link.getAttribute('href'); const jpg=link.getAttribute('data-full-jpg'); const preferWebp = (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp')===0);
+      lbImg.src= preferWebp ? href : jpg; lb.removeAttribute('hidden'); }
+      if(e.target.closest('.lightbox__close') || e.target===lb){ lb.setAttribute('hidden',''); lbImg.removeAttribute('src'); }});
 
-    // Close modal when clicking outside
-    document.getElementById('bookingModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModal();
-        closeCertificateModal();
-      }
-    });
-
-    // Certificate modal functions
     function openCertificateModal(imageSrc) {
       const modal = document.getElementById('certificateModal');
       const modalImage = document.getElementById('certificateModalImage');
@@ -981,103 +484,15 @@
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
     }
-
     function closeCertificateModal() {
       const modal = document.getElementById('certificateModal');
       modal.classList.remove('show');
       document.body.style.overflow = 'auto';
     }
-
-    // Close certificate modal when clicking outside
     document.getElementById('certificateModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeCertificateModal();
-      }
+      if (e.target === this) closeCertificateModal();
     });
 
-    // Form submission
-    async function submitForm(event) {
-      event.preventDefault();
-      
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      // Show loading state
-      const submitBtn = event.target.querySelector('.form-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Отправляем...';
-      submitBtn.disabled = true;
-      
-      try {
-        // Send to Netlify Function
-        const response = await fetch('/.netlify/functions/send-telegram', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-        
-        if (response.ok) {
-          // Success
-          submitBtn.textContent = '✅ Отправлено!';
-          submitBtn.style.background = '#48bb78';
-          
-          // Show success message
-          alert('Спасибо! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время!');
-          
-          // Reset form and close modal
-          event.target.reset();
-          setTimeout(() => {
-            closeModal();
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 2000);
-          
-        } else {
-          throw new Error('Ошибка отправки');
-        }
-        
-      } catch (error) {
-        console.error('Ошибка:', error);
-        
-        // Fallback to WhatsApp
-        let fallbackMessage = `🎓 Новая заявка на урок!\n\n`;
-        fallbackMessage += `👤 Имя: ${data.name}\n`;
-        fallbackMessage += `📞 Контакт: ${data.contact}\n`;
-        
-        if (data.goal) {
-          const goals = {
-            'conversation': 'Разговорная практика',
-            'exam_ege': 'Подготовка к ЕГЭ',
-            'exam_oge': 'Подготовка к ОГЭ',
-            'business': 'Деловой английский',
-            'travel': 'Английский для путешествий',
-            'beginner': 'Изучение с нуля',
-            'intermediate': 'Повышение уровня',
-            'other': 'Другое'
-          };
-          fallbackMessage += `🎯 Цель: ${goals[data.goal]}\n`;
-        }
-        
-        if (data.comment.trim()) {
-          fallbackMessage += `💬 Комментарий: ${data.comment}\n`;
-        }
-        
-        const whatsappUrl = `https://wa.me/84938852334?text=${encodeURIComponent(fallbackMessage)}`;
-        
-        if (confirm('Произошла ошибка при отправке. Отправить заявку через WhatsApp?')) {
-          window.open(whatsappUrl, '_blank');
-          event.target.reset();
-          closeModal();
-        }
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    }
   </script>
 </body>
 </html>
